@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Signal VS Virtual DOM</title>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone@7.10.3/babel.min.js" crossorigin></script>
+
+    <style>
+        .bloc {
+            margin: 1rem;
+            padding: 0 1rem 1rem 1rem;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Signal VS Virtual DOM</h1>
+    <div class="bloc">
+        <h2>React</h2>
+        <div id="react"></div>
+    </div>
+
+    <div class="bloc">
+        <h2>Solid</h2>
+        <div id="solid"></div>
+    </div>
+
+    <script type="module" src="./src/solid.js"></script>
+    <script type="text/babel" data-type="module" src="./src/react.js"></script>
+</body>
+
+</html>

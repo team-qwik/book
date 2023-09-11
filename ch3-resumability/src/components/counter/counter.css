@@ -1,0 +1,21 @@
+div {
+  display: flex
+}
+
+span, button {
+  border: 1px solid black;
+  width: 6rem;
+}
+
+span {
+  font-size: 5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+button {
+  color: white;
+  cursor: pointer;
+  background-color: black;
+  font-size: 2rem;
+}

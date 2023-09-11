@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Exemple de composant asynchrone en Vue 3</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.29/dist/vue.global.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <button @click="dislayComponent">Click me to display and load asynchronously the component</button>
+      <br />
+      <async-component v-if="isComponentDisplay" />
+    </div>
+
+    <script type="module">
+      const { defineAsyncComponent, ref } = Vue
+
+      const AsyncComponent = defineAsyncComponent(() => import('./AsyncComponent.js'))
+
+      const app = Vue.createApp({
+        components: {
+          'async-component': AsyncComponent,
+        },
+        setup() {
+          const isComponentDisplay = ref(false)
+
+          function dislayComponent() {
+            isComponentDisplay.value = true
+          }
+
+          return {
+            isComponentDisplay,
+            dislayComponent,
+          }
+        },
+      })
+
+      app.mount('#app')
+    </script>
+  </body>
+</html>

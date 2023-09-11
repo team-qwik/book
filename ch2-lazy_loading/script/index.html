@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML with lazy script</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+  <div id="app">
+    <button @click="loadScript">
+      Click me to load script
+    </button>
+  </div>
+
+  <script>
+    const { createApp } = Vue
+
+    createApp({
+      setup() {
+        function loadScript() {
+          import('./script.js').then((script) => {
+            // Use the downloaded script
+            script.default()
+          });
+        }
+
+        return {
+          loadScript
+        }
+      }
+    }).mount('#app')
+  </script>
+</body>
+</html>
