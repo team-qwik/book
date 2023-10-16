@@ -4,10 +4,10 @@ import Demo from '~/components/demo'
 
 export default component$(() => {
   return (
-    <>
+    <div>
       <h1>DEMO</h1>
-      <Demo></Demo>
-    </>
+      <Demo />
+    </div>
   )
 })
 

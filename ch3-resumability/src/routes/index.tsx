@@ -3,11 +3,7 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 import Counter from '../components/counter/counter'
 
 export default component$(() => {
-  return (
-    <>
-      <Counter></Counter>
-    </>
-  );
+  return <Counter />;
 });
 
 export const head: DocumentHead = {
