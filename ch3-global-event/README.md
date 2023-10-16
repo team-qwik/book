@@ -4,7 +4,7 @@
 
 ## FR
 
-Pour visualiser la mécanique simplifiée du Qwikloader, il vous faudra servir les fichiers HTML via un serveur HTTP. Pour cela, vous pouvez utiliser un serveur HTTP NodeJS en utilisant la commande suivante: 
+Pour visualiser la mécanique simplifiée du Qwikloader, il vous faudra servir les fichiers HTML via un serveur HTTP. Pour cela, vous pouvez utiliser un serveur HTTP NodeJS en utilisant la commande suivante:
 
 ```bash
   npx http-server src

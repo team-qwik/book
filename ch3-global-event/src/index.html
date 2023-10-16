@@ -1,20 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Global handler</title>
   </head>
   <body>
-    <button on:click="./script.js#hello">
-      Click
-    </button>
+    <button on:click="./script.js#hello">Click</button>
     <script>
       document.addEventListener('click', (e) => {
-        const srcElement = e.composedPath().find((el) => el.hasAttribute('on:click'))
+        const srcElement = e
+          .composedPath()
+          .find((el) => el.hasAttribute('on:click'))
         if (srcElement) {
           const onClick = srcElement.getAttribute('on:click')
-          const [scriptToDownload, symbol] = srcElement.getAttribute('on:click')?.split('#') ?? ''
+          const [scriptToDownload, symbol] =
+            srcElement.getAttribute('on:click')?.split('#') ?? ''
 
           if (scriptToDownload && symbol) {
             import(scriptToDownload).then((script) => {
@@ -24,5 +25,5 @@
         }
       })
     </script>
-</body>
+  </body>
 </html>

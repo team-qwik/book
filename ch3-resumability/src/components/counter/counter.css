@@ -1,8 +1,9 @@
 div {
-  display: flex
+  display: flex;
 }
 
-span, button {
+span,
+button {
   border: 1px solid black;
   width: 6rem;
 }

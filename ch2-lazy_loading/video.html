@@ -1,43 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HTML with lazy video</title>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const video = document.getElementById('lazy-video')
-      const source = video.querySelector('source')
-      const videoSrc = source.getAttribute('data-src')
-  
-  
-      const options = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1,
-      }
-  
-  
-      const videoObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            source.setAttribute('src', videoSrc)
-            video.load()
-            videoObserver.unobserve(entry.target)
-          }
-        })
-      }, options)
-  
-  
-      videoObserver.observe(video)
-    })
-  </script>
-</head>
-<body>
-  <main>
-    <video id="lazy-video" style="margin-top: 300vh" controls muted autoplay>
-      <source data-src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-    </video>
-  </main>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML with lazy video</title>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const video = document.getElementById('lazy-video')
+        const source = video.querySelector('source')
+        const videoSrc = source.getAttribute('data-src')
+
+        const options = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.1
+        }
+
+        const videoObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              source.setAttribute('src', videoSrc)
+              video.load()
+              videoObserver.unobserve(entry.target)
+            }
+          })
+        }, options)
+
+        videoObserver.observe(video)
+      })
+    </script>
+  </head>
+  <body>
+    <main>
+      <video id="lazy-video" style="margin-top: 300vh" controls muted autoplay>
+        <source
+          data-src="https://www.w3schools.com/html/mov_bbb.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </main>
+  </body>
 </html>
